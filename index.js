@@ -68,6 +68,6 @@ app.all("*", (req, res) => {
   res.status(400).json({ message: "Page not found" });
 });
 
-app.listen(process.env.port, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server Started");
 });
