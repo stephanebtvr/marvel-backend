@@ -29,7 +29,7 @@ app.get("/characters", async (req, res) => {
 
 app.get("/comics/:characterId", async (req, res) => {
   try {
-    const characterId = "";
+    let characterId = "";
     if (req.params.characterId) {
       characterId = req.params.characterId;
     }
