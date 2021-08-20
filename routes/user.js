@@ -23,7 +23,6 @@ router.post("/user/signup", async (req, res) => {
         email: req.fields.email,
         account: {
           username: req.fields.username,
-          phone: req.fields.phone,
         },
         token: token,
         hash: hash,
@@ -58,11 +57,10 @@ router.post("/user/login", async (req, res) => {
           token: user.token,
           account: {
             username: user.account.username,
-            phone: user.account.phone,
           },
         });
-      }else {
-          res.status(400).json({message: "Wrong password, please try again"})
+      } else {
+        res.status(400).json({ message: "Wrong password, please try again" });
       }
     } else {
       res.status(400).json({ message: "This email is unknown, please signup" });
