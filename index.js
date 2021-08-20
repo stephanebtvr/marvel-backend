@@ -6,6 +6,15 @@ const axios = require("axios");
 require("dotenv").config();
 app.use(formidable());
 app.use(cors());
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
+
+const userRoutes = require("./routes/user");
+app.use(userRoutes);
 
 app.get("/characters", async (req, res) => {
   try {
