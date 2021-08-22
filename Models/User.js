@@ -10,8 +10,8 @@ const User = mongoose.model("User", {
     username: {
       type: String,
     },
-   // phone: String,
-    avatar: Object,
+    // phone: String,
+    // avatar: Object,
   },
   token: String,
   hash: String,
