@@ -7,7 +7,7 @@ const uid2 = require("uid2");
 //const modelUser = require("../Models/User");
 const User = require("../Models/User");
 //route SIGNUP:
-router.post("/signup", async (req, res) => {
+router.post("/user/signup", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.fields.email });
     if (user) {
@@ -44,7 +44,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 //route LOGIN:
-router.post("/login", async (req, res) => {
+router.post("/user/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.fields.email });
     if (user) {
