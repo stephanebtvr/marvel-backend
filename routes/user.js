@@ -1,7 +1,7 @@
 const express = require("express");
 const formidable = require("express-formidable");
-router.use(formidable());
 const router = express.Router();
+router.use(formidable());
 const SHA256 = require("crypto-js/sha256");
 const encBase64 = require("crypto-js/enc-base64");
 const uid2 = require("uid2");
@@ -9,7 +9,7 @@ const uid2 = require("uid2");
 //const modelUser = require("../Models/User");
 const User = require("../Models/User");
 //route SIGNUP:
-router.post("/signup",async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.fields.email });
     if (user) {
