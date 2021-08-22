@@ -5,9 +5,7 @@ const cors = require("cors");
 const axios = require("axios");
 require("dotenv").config();
 app.use(formidable());
-app.use(cors(
-  
-));
+app.use(cors({ origin: "*" }));
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
