@@ -1,11 +1,11 @@
 const express = require("express");
 const formidable = require("express-formidable");
 const app = express();
-//const cors = require("cors");
+const cors = require("cors");
 const axios = require("axios");
 require("dotenv").config();
 app.use(formidable());
-//app.use(cors({ origin: "*" }));
+app.use(cors());
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
