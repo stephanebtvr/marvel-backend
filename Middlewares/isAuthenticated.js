@@ -1,4 +1,4 @@
-//fonction à créer utilisable à chaque page presque donc nécessité de realiser un dossier séparé
+//Servira pour la route favorite
 
 const User = require("../Models/User");
 

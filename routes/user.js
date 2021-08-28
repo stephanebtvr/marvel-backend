@@ -1,13 +1,16 @@
 const express = require("express");
-const formidable = require("express-formidable");
+
 const router = express.Router();
-router.use(formidable());
+
 const SHA256 = require("crypto-js/sha256");
 const encBase64 = require("crypto-js/enc-base64");
 const uid2 = require("uid2");
 
-//const modelUser = require("../Models/User");
 const User = require("../Models/User");
+
+
+
+
 //route SIGNUP:
 router.post("/signup", async (req, res) => {
   try {
@@ -41,9 +44,10 @@ router.post("/signup", async (req, res) => {
       res.status(400).json({ message: "Error: username is not defined" });
     }
   } catch (error) {
-    res.status(400).json({ message: message.error });
+    res.status(400).json({ message: error.message });
   }
 });
+
 //route LOGIN:
 router.post("/login", async (req, res) => {
   try {
@@ -67,7 +71,7 @@ router.post("/login", async (req, res) => {
       res.status(400).json({ message: "This email is unknown, please signup" });
     }
   } catch (error) {
-    res.status(400).json({ message: message.error });
+    res.status(400).json({ message: error.message });
   }
 });
 
