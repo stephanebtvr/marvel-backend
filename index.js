@@ -74,7 +74,7 @@ app.get("/comics", async (req, res) => {
   }
 });
 
-app.post("/favorites", isAuthenticated, async (req, res) => {
+app.post("/favorites",/* isAuthenticated,*/ async (req, res) => {
   const { favs } = req.fields;
 
   let favTab = [[], []]; // On  a un tableau contenant 2 tableaux: 1 pour les persos  et 1 pour les comics
